@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.com.android.application)
     alias(libs.plugins.org.jetbrains.kotlin.android)
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -30,6 +31,12 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures{
+        viewBinding true
+    }
+    buildFeatures{
+        viewBinding true
+    }
 }
 
 dependencies {
@@ -38,7 +45,37 @@ dependencies {
     implementation libs.appcompat
     implementation libs.material
     implementation libs.constraintlayout
+    implementation libs.circleimageview
+    implementation libs.play.services.auth
+    implementation libs.retrofit
+    implementation libs.gson
+    implementation libs.converter.gson
+    implementation libs.converter.scalars
+    implementation files('libs/libDaumMapAndroid.jar')
+    implementation libs.play.services.location
     testImplementation libs.junit
     androidTestImplementation libs.androidx.test.ext.junit
     androidTestImplementation libs.espresso.core
+
+    //FireBase CoreLibrary
+    implementation platform('com.google.firebase:firebase-bom:32.0.0')
+
+    //FireBase FireSore
+    implementation('com.google.firebase:firebase-firestore-ktx')
+
+    //google auth 로그인 관련 라이브러리
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-auth-ktx'
+
+    //네아로 로그인
+    implementation 'com.navercorp.nid:oauth:5.6.0' // jdk 11
+
+    //카카오 라이브러리
+    implementation "com.kakao.sdk:v2-all:2.14.0" // 전체 모듈 설치, 2.11.0 버전부터 지원
+//    implementation "com.kakao.sdk:v2-user:2.14.0" // 카카오 로그인
+//    implementation "com.kakao.sdk:v2-talk:2.14.0" // 친구, 메시지(카카오톡)
+//    implementation "com.kakao.sdk:v2-story:2.14.0" // 카카오스토리
+//    implementation "com.kakao.sdk:v2-share:2.14.0" // 메시지(카카오톡 공유)
+//    implementation "com.kakao.sdk:v2-navi:2.14.0" // 카카오내비
+//    implementation "com.kakao.sdk:v2-friend:2.14.0" // 카카오톡 소셜 피커, 리소스 번들 파일 포함
 }
