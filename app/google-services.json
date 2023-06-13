@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "257167350731",
+    "project_id": "tpkaosearchapp990918",
+    "storage_bucket": "tpkaosearchapp990918.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:257167350731:android:947b0084e21ac09b6c744e",
+        "android_client_info": {
+          "package_name": "com.cys.searchplace"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "257167350731-eo8bf7gp1o7mmeqglq2nd0rsbvhthihn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2pqz78k7vGI62YoqQKYqET0QNMOjvmx4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "257167350731-eo8bf7gp1o7mmeqglq2nd0rsbvhthihn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
