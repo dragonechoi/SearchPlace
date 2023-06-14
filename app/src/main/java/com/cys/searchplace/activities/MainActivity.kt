@@ -17,6 +17,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.cys.searchplace.R
 import com.cys.searchplace.databinding.ActivityMainBinding
+import com.cys.searchplace.fragments.PlaceListFragment
+import com.cys.searchplace.fragments.PlaceMapFragment
 import com.cys.searchplace.model.KakaoSearchPlaceResponse
 import com.cys.searchplace.network.RetrofitApiService
 import com.cys.searchplace.network.RetrofitHelper
@@ -27,8 +29,7 @@ import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.Priority
 import com.google.android.material.tabs.TabLayout
-import com.mrhi2023.tpkaosearchapp.fragments.PlaceListFragment
-import com.mrhi2023.tpkaosearchapp.fragments.PlaceMapFragment
+
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -113,24 +114,22 @@ class MainActivity : AppCompatActivity() {
 
     //퍼미션 요청 대행사 계약 및 등록
     val permissionLauncher: ActivityResultLauncher<String> = registerForActivityResult(
-        ActivityResultContracts.RequestPermission(),
-        object : ActivityResultCallback<Boolean> {
-            override fun onActivityResult(result: Boolean?) {
-                if (result!!) requestMyLocation()
-                else Toast.makeText(
-                    this@MainActivity,
-                    "위치정보제공에 동의하지 않았습니다. 검색기능이 제한됩니다.",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-        })
+        ActivityResultContracts.RequestPermission()
+    ) { result ->
+        if (result!!) requestMyLocation()
+        else Toast.makeText(
+            this@MainActivity,
+            "위치정보제공에 동의하지 않았습니다. 검색기능이 제한됩니다.",
+            Toast.LENGTH_SHORT
+        ).show()
+    }
 
 
     //내 위치 요청 작업 메소드
     private fun requestMyLocation() {
 
         //위치검색 기준 설정하는 요청 객체
-        val request  = LocationRequest.Builder(Priority.PRIORITY_HIGH_ACCURACY,1000).build()
+        val request = LocationRequest.Builder(Priority.PRIORITY_HIGH_ACCURACY, 1000).build()
 
         //실시간 위치정보 갱신 요청
         if (ActivityCompat.checkSelfPermission(

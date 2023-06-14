@@ -1,4 +1,4 @@
-package com.mrhi2023.tpkaosearchapp.fragments
+package com.cys.searchplace.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater

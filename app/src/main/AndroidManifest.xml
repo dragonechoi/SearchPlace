@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
+
     <application
         android:name=".GlobalApplication"
         android:allowBackup="true"
@@ -57,10 +58,9 @@
                     android:host="oauth"
                     android:scheme="kakao63fe06a5d8d4139190944f590cee0cae" />
             </intent-filter>
-            <!-- 카카오 지도 APP KEY 등록 [네이티브 앱키]   -->
-            <meta-data android:name="com.kakao.sdk.AppKey" android:value="63fe06a5d8d4139190944f590cee0cae"/>
         </activity>
-
+        <!-- 카카오 지도 APP KEY 등록 [네이티브 앱키]   -->
+        <meta-data android:name="com.kakao.sdk.AppKey" android:value="63fe06a5d8d4139190944f590cee0cae"/>
     </application>
 
 

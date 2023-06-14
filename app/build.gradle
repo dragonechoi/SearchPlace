@@ -20,8 +20,9 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
         }
     }
     compileOptions {
@@ -30,9 +31,6 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
-    }
-    buildFeatures{
-        viewBinding true
     }
     buildFeatures{
         viewBinding true
@@ -51,7 +49,6 @@ dependencies {
     implementation libs.gson
     implementation libs.converter.gson
     implementation libs.converter.scalars
-    implementation files('libs/libDaumMapAndroid.jar')
     implementation libs.play.services.location
     testImplementation libs.junit
     androidTestImplementation libs.androidx.test.ext.junit
@@ -78,4 +75,7 @@ dependencies {
 //    implementation "com.kakao.sdk:v2-share:2.14.0" // 메시지(카카오톡 공유)
 //    implementation "com.kakao.sdk:v2-navi:2.14.0" // 카카오내비
 //    implementation "com.kakao.sdk:v2-friend:2.14.0" // 카카오톡 소셜 피커, 리소스 번들 파일 포함
+
+    //Kakao Map SDK..
+    implementation files('libs/libDaumMapAndroid.jar')
 }
