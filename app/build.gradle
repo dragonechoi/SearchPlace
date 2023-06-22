@@ -22,7 +22,6 @@ android {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.debug
         }
     }
     compileOptions {
@@ -78,4 +77,5 @@ dependencies {
 
     //Kakao Map SDK..
     implementation files('libs/libDaumMapAndroid.jar')
+
 }
